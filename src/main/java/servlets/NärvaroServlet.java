@@ -18,7 +18,7 @@ public class NärvaroServlet extends HttpServlet {
     public static Connection con;
     public static Statement st;
     public static ResultSet rs;
-    public static String tablestyler = "style='border: 1px solid black; background-color: #96D4D4;margin-left: auto; margin-right: auto; '";
+    public static String tablestyler = "style='border: 1px solid black; background-color: #96D4D4; margin-left: auto; margin-right: auto;'";
     public static String backgroundstyler = "style=\"background-image: url('https://i.pinimg.com/originals/5e/9f/e2/5e9fe2b0bde19a68a87a095f92bc38aa.jpg');\"";
 
     public static String Navigationbar = " style=\"\n" +
@@ -47,7 +47,7 @@ public class NärvaroServlet extends HttpServlet {
 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gritacademy", "root", "");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gritacademy", "user", "user");
                 st = con.createStatement();
                 rs = st.executeQuery("select s.id, s.Fname, s.Lname, k.YHP, k.name, k.beskrivning FROM studenter s  INNER JOIN närvaro n ON s.id = n.student_id INNER JOIN kurser k ON k.id = n.kurs_id Order by id;");
 

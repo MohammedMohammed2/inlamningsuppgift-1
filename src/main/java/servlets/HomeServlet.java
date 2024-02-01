@@ -43,7 +43,7 @@ public class HomeServlet extends HttpServlet{
             out.println(top);
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gritacademy","root", "");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gritacademy","user", "user");
 
                 st = con.createStatement();
                 rs = st.executeQuery("SELECT * FROM studenter");
